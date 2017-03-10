@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--Tools namespace is use in this case -->
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="16dp"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        >
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:src="@android:drawable/ic_delete"
+            />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingLeft="8dp"
+            >
+            <!--Tools namespace is use in this case This tools text is just a preview text and will not be in actual apps-->
+            <TextView
+                android:id="@+id/miwoktext1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                tools:text="lutti"/>
+
+            <TextView
+                android:id="@+id/defaulttext1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="one"/>
+
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>
