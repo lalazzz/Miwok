@@ -50,6 +50,7 @@ public class NumbersActivity extends AppCompatActivity {
         Log.v("NumbersActivity", "Words at index 0 " + words.get(0));
         Log.v("NumbersActivity", "Words at index 1 " + words.get(1));
         Log.v("NumbersActivity", "Words at index 2 " + words.get(2));
+        Log.v("NumbersActivity", "Words at index 2 " + words.get(3));
         Log.v("NumbersActivity", "Words at index size: " + words.size());
 
         //Finding the root view of the whole layout
