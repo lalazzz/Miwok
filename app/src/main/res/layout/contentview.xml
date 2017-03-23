@@ -5,42 +5,53 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:padding="16dp"
     android:orientation="vertical" >
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="horizontal"
-        >
+        android:background="@color/palebackground"
+        android:orientation="horizontal">
 
         <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:src="@android:drawable/ic_delete"
-            />
+            android:id="@+id/images"
+            android:layout_width="@dimen/list_item_height"
+            android:layout_height="@dimen/list_item_height"
+            tools:src="@drawable/color_black" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
-            android:paddingLeft="8dp"
-            >
+            android:padding="12dp"
+            tools:background="@color/category_colors"
+            android:id="@+id/text_container">
+            <!-- Height and weight and gravity to balance out the spaces -->
             <!--Tools namespace is use in this case This tools text is just a preview text and will not be in actual apps-->
-            <TextView
-                android:id="@+id/miwoktext1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textStyle="bold"
-                tools:text="lutti"/>
+
+                <TextView
+                    android:id="@+id/miwoktext1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="bottom"
+                    android:textAppearance="?android:textAppearanceMedium"
+                    android:textColor="@color/textcolor"
+                    android:textStyle="bold"
+                    android:layout_weight="1"
+                    tools:text="lutti" />
+
 
             <TextView
                 android:id="@+id/defaulttext1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                tools:text="one"/>
+                android:textColor="@color/textcolor"
+                android:layout_weight="1"
+                tools:text="one" />
+
 
         </LinearLayout>
+
     </LinearLayout>
 
 </LinearLayout>

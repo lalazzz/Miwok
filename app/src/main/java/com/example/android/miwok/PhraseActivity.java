@@ -27,7 +27,7 @@ public class PhraseActivity extends AppCompatActivity {
         words.add(new Word("Come here.","әnni'nem"));
 
         //Custom of arrayadapter but only one list ( this, layout , List)
-        WordAdapter wadapter = new WordAdapter(this, words);
+        WordAdapter wadapter = new WordAdapter(this, words,R.color.category_phrases);
 
         // Find the {@link GridView} object in the view hierarchy of the {@link Activity}.
         ListView listView = (ListView) findViewById(R.id.listview0);

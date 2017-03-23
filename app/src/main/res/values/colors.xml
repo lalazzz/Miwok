@@ -34,4 +34,15 @@
 
     <!-- Background color for the phrases category -->
     <color name="category_phrases">#16AFCA</color>
+
+    <!-- Background color for the Overall application -->
+    <color name="palebackground">#ffdead</color>
+
+    <!-- Background color for the Overall application -->
+    <color name="palebackground2">#FCE4EC</color>
+
+    <!-- Background color for the Overall application -->
+    <color name="textcolor">#ffffff</color>
+
+
 </resources>

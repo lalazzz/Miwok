@@ -15,6 +15,12 @@ public class Word {
     private String mDefaultTranslation;
     /** Miwok translation for the word */
     private String mMiwokTranslation;
+    /** Images resource ID for the word. similaily like an mailingaddress of the house rather than the whole house */
+    private int mImagesResID = noImageShown;
+    //Create an initial no image shown = -1 when there is no image retreived
+    private static final int noImageShown = -1;
+    //Creating audio member variable for the list items
+   // private int mAudioResID;
 
 
     //Step2: Create a mvarible state for public to access the state.
@@ -26,13 +32,31 @@ public class Word {
          mMiwokTranslation = miwokTranslation;
       }
 
-      //Step 3: Assign the methods for the state which in this case is the get. method
-     //Get the default translation of the word. adn return the string.
-      public String getDefaultTranslation() {
-         return mDefaultTranslation;
-      }
-    //Get the Miwok translation of the word.
+    public Word(String defaultTranslation, String miwokTranslation,int ImagesResID) {
+        mDefaultTranslation = defaultTranslation;
+        mMiwokTranslation = miwokTranslation;
+        mImagesResID =ImagesResID;
+    }
+
+    //Step 3: Assign the methods for the state which in this case is the get. method
+        //Get the default translation of the word. adn return the string.
+        public String getDefaultTranslation() {
+                 return mDefaultTranslation;
+              }
+        //Get the Miwok translation of the word.
         public String getMiwokTranslation() {
-         return mMiwokTranslation;
-       }
+                 return mMiwokTranslation;
+               }
+        //Get the Images of the word.
+        public int getImagesResID(){
+            return mImagesResID;
+    }
+    //if the images is -1 means is it false, therefore in this case we want true
+    //therefore, by not equal to -1 it means there is image.
+    //Checking methods of the image is imply in word class as wordadapter just getting info of hasimage or not.
+        public boolean hasImage(){
+            return mImagesResID != noImageShown;
+        }
+
+
 }

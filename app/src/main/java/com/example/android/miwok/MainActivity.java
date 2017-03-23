@@ -22,6 +22,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
+
 import com.google.android.gms.appindexing.Action;
 import com.google.android.gms.appindexing.AppIndex;
 import com.google.android.gms.appindexing.Thing;
@@ -90,6 +91,8 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(optPhrases);
             }
         });
+
+
     }
     // Intent way if there is a specific id when android:onclick = "operatingFamily" function is added in activity main xml layout.
     //    public void operatingFamily(View view) {
