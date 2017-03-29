@@ -1,8 +1,12 @@
 package com.example.android.miwok;
 
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.GridView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -14,15 +18,15 @@ public class ColorActivity extends AppCompatActivity {
         setContentView(R.layout.gridviewlayout);
 
         //Creating Arraylist to an color object type for both translation
-        ArrayList<Word> words = new ArrayList<Word>();
-        words.add(new Word("Red","weṭeṭṭi",R.drawable.color_red));
-        words.add(new Word("Green","chokokki",R.drawable.color_green));
-        words.add(new Word("Brown","ṭakaakki",R.drawable.color_brown));
-        words.add(new Word("Gray","ṭopoppi",R.drawable.color_gray));
-        words.add(new Word("Black","kululli",R.drawable.color_black));
-        words.add(new Word("White","kelelli",R.drawable.color_white));
-        words.add(new Word("Dusty Yellow","ṭopiisә",R.drawable.color_dusty_yellow));
-        words.add(new Word("Mustard Yellow","chiwiiṭә",R.drawable.color_mustard_yellow));
+        final ArrayList<Word> words = new ArrayList<Word>();
+        words.add(new Word("Red","weṭeṭṭi",R.drawable.color_red,R.raw.color_red));
+        words.add(new Word("Green","chokokki",R.drawable.color_green,R.raw.color_green));
+        words.add(new Word("Brown","ṭakaakki",R.drawable.color_brown,R.raw.color_brown));
+        words.add(new Word("Gray","ṭopoppi",R.drawable.color_gray,R.raw.color_gray));
+        words.add(new Word("Black","kululli",R.drawable.color_black,R.raw.color_black));
+        words.add(new Word("White","kelelli",R.drawable.color_white,R.raw.color_white));
+        words.add(new Word("Dusty Yellow","ṭopiisә",R.drawable.color_dusty_yellow,R.raw.color_dusty_yellow));
+        words.add(new Word("Mustard Yellow","chiwiiṭә",R.drawable.color_mustard_yellow,R.raw.color_mustard_yellow));
 
         //Custom of arrayadapter but only one list ( this, layout , List) This only take in an array list where there is miwork and default in our case
         //Therefore, an word object class is needed to be created replacing list<t> , which is <T> object type.
@@ -40,6 +44,16 @@ public class ColorActivity extends AppCompatActivity {
         // Do this by calling the setAdapter method on the {@link ListView} object and pass in
         // 1 argument, which is the {@link ArrayAdapter} with the variable name itemsAdapter.
         listView.setAdapter(wadapter);
+
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Toast.makeText(ColorActivity.this,"Playing..",Toast.LENGTH_SHORT).show();
+                Word word = words.get(position);
+                MediaPlayer mediaPlayer = MediaPlayer.create(ColorActivity.this,word.getAudioResID());
+                mediaPlayer.start();
+            }
+        });
 
     }
 }

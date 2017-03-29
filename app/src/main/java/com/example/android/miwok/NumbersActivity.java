@@ -50,19 +50,19 @@ public class NumbersActivity extends AppCompatActivity {
 //        words.add("Eleven");
 
         //Creating Arraylist to an object type for both translation
-        ArrayList<Word> words = new ArrayList<Word>();
+        final ArrayList<Word> words = new ArrayList<Word>();
         //word w = new word ("one", "lutti")); which is Word(String defaultTranslation, String miwokTranslation) in this case.
         //words.add(w); combine into the line below.
-        words.add(new Word("One","lutti",R.drawable.number_one));
-        words.add(new Word("Two","otiiko",R.drawable.number_two));
-        words.add(new Word("Three","tolookosu",R.drawable.number_three));
-        words.add(new Word("Four","oyyisa",R.drawable.number_four));
-        words.add(new Word("Five","massokka",R.drawable.number_five));
-        words.add(new Word("Six","temmokka",R.drawable.number_six));
-        words.add(new Word("Seven","kenekaku",R.drawable.number_seven));
-        words.add(new Word("Eight","kawinta",R.drawable.number_eight));
-        words.add(new Word("Nine","wo'e",R.drawable.number_nine));
-        words.add(new Word("Ten","na'aacha",R.drawable.number_ten));
+        words.add(new Word("One","lutti",R.drawable.number_one,R.raw.number_one));
+        words.add(new Word("Two","otiiko",R.drawable.number_two,R.raw.number_two));
+        words.add(new Word("Three","tolookosu",R.drawable.number_three,R.raw.number_three));
+        words.add(new Word("Four","oyyisa",R.drawable.number_four,R.raw.number_four));
+        words.add(new Word("Five","massokka",R.drawable.number_five,R.raw.number_five));
+        words.add(new Word("Six","temmokka",R.drawable.number_six,R.raw.number_six));
+        words.add(new Word("Seven","kenekaku",R.drawable.number_seven,R.raw.number_seven));
+        words.add(new Word("Eight","kawinta",R.drawable.number_eight,R.raw.number_eight));
+        words.add(new Word("Nine","wo'e",R.drawable.number_nine,R.raw.number_nine));
+        words.add(new Word("Ten","na'aacha",R.drawable.number_ten,R.raw.number_ten));
 
         Log.v("NumbersActivity", "Words at index 0 " + words.get(0));
         Log.v("NumbersActivity", "Words at index 1 " + words.get(1));
@@ -117,7 +117,8 @@ public class NumbersActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Toast.makeText(NumbersActivity.this,"Playing..",Toast.LENGTH_SHORT).show();
-                MediaPlayer mediaPlayer = MediaPlayer.create(NumbersActivity.this,R.raw.number_one);
+                Word word = words.get(position);
+                MediaPlayer mediaPlayer = MediaPlayer.create(NumbersActivity.this,word.getAudioResID());
                 mediaPlayer.start();
             }
         });

@@ -19,23 +19,24 @@ public class Word {
     private int mImagesResID = noImageShown;
     //Create an initial no image shown = -1 when there is no image retreived
     private static final int noImageShown = -1;
-    //Creating audio member variable for the list items
-   // private int mAudioResID;
-
+    //Audio Resource ID variable for the word
+    private int mAudioResID;
 
     //Step2: Create a mvarible state for public to access the state.
     // This public constructor enable the activity outside to retrieve the method from and public need to pass in two required inputs.
     // Word(Input 1 : String defaultTranslation, Input 2: String miwokTranslation)
     // Create a new Word object.@param defaultTranslation is the word in a language that the user is already familiar with(such as English)@param miwokTranslation is the word in the Miwok language
-    public Word(String defaultTranslation, String miwokTranslation) {
-         mDefaultTranslation = defaultTranslation;
-         mMiwokTranslation = miwokTranslation;
+    public Word(String defaultTranslation, String miwokTranslation,int audioResID) {
+        mDefaultTranslation = defaultTranslation;
+        mMiwokTranslation = miwokTranslation;
+        mAudioResID = audioResID;
       }
 
-    public Word(String defaultTranslation, String miwokTranslation,int ImagesResID) {
+    public Word(String defaultTranslation, String miwokTranslation,int ImagesResID, int audioResID) {
         mDefaultTranslation = defaultTranslation;
         mMiwokTranslation = miwokTranslation;
         mImagesResID =ImagesResID;
+        mAudioResID = audioResID;
     }
 
     //Step 3: Assign the methods for the state which in this case is the get. method
@@ -51,12 +52,13 @@ public class Word {
         public int getImagesResID(){
             return mImagesResID;
     }
+        //Get the Audio of the word and return it
+        public  int getAudioResID(){return mAudioResID;}
     //if the images is -1 means is it false, therefore in this case we want true
     //therefore, by not equal to -1 it means there is image.
     //Checking methods of the image is imply in word class as wordadapter just getting info of hasimage or not.
         public boolean hasImage(){
             return mImagesResID != noImageShown;
         }
-
 
 }
