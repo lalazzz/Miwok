@@ -61,4 +61,13 @@ public class Word {
             return mImagesResID != noImageShown;
         }
 
+    @Override
+    public String toString() {
+        return "Word{" +
+                "mDefaultTranslation='" + mDefaultTranslation + '\'' +
+                ", mMiwokTranslation='" + mMiwokTranslation + '\'' +
+                ", mImagesResID=" + mImagesResID +
+                ", mAudioResID=" + mAudioResID +
+                '}';
+    }
 }
