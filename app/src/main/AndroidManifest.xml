@@ -25,29 +25,43 @@
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
 
-        <activity android:name=".NumbersActivity"
+        <activity
+            android:name=".NumbersActivity"
             android:label="@string/category_numbers"
-            />
+            android:parentActivityName=".MainActivity">
+                <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity"/>
+        </activity>
 
         <activity android:name=".FamilyActivity"
             android:label="@string/category_family"
-            />
+            android:parentActivityName=".MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity"/>
+            </activity>
 
         <activity android:name=".ColorActivity"
             android:label="@string/category_colors"
-            />
+            android:parentActivityName=".MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity"/>
+        </activity>
 
         <activity android:name=".PhraseActivity"
             android:label="@string/category_phrases"
-            >
-
-
-        </activity><!-- ATTENTION: This was auto-generated to add Google Play services to your project for
+            android:parentActivityName=".MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity"/>
+        </activity>
+        <!-- ATTENTION: This was auto-generated to add Google Play services to your project for
      App Indexing.  See https://g.co/AppIndexing/AndroidStudio for more information. -->
         <meta-data
             android:name="com.google.android.gms.version"
