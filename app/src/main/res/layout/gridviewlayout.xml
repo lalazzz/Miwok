@@ -9,6 +9,9 @@
     android:verticalSpacing="1dp"
     android:horizontalSpacing="1dp"
     android:background="@color/palebackground2"
-    tools:context="com.example.android.miwok.FamilyActivity">
+    tools:context="com.example.android.miwok.FamilyActivity"
+    android:drawSelectorOnTop="true"
+    >
+
 
 </GridView>

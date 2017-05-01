@@ -51,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
         //Finding the text res that we want for the number onclick listener
         TextView numbers =  (TextView) findViewById(R.id.numbers);
         //Set the click listener to the specify text view and a abstract way to generalise the click listener
-        numbers.setOnClickListener(new NumbersClickListener(){
+        numbers.setOnClickListener(new View.OnClickListener(){
             @Override
                 public void onClick(View view ){
                 Toast.makeText(view.getContext(),"List of numbers shown.",Toast.LENGTH_SHORT).show();
@@ -63,7 +63,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
         TextView family =  (TextView) findViewById(R.id.family);
-        family.setOnClickListener(new NumbersClickListener(){
+        family.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view ){
                 Toast.makeText(view.getContext(),"List of family shown.",Toast.LENGTH_SHORT).show();
@@ -73,7 +73,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
         TextView colors =  (TextView) findViewById(R.id.colors);
-        colors.setOnClickListener(new NumbersClickListener(){
+        colors.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view ){
                 Toast.makeText(view.getContext(),"List of colors shown.",Toast.LENGTH_SHORT).show();
@@ -83,7 +83,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
         TextView phrases =  (TextView) findViewById(R.id.phrases);
-        phrases.setOnClickListener(new NumbersClickListener(){
+        phrases.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view ){
                 Toast.makeText(view.getContext(),"List of phrases shown.",Toast.LENGTH_SHORT).show();

@@ -7,6 +7,7 @@
     tools:context="com.example.android.miwok.NumbersActivity"
     android:orientation="vertical"
     android:background="@color/palebackground2"
+    android:drawSelectorOnTop="true"
     >
 
 </ListView>

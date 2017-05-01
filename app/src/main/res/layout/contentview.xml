@@ -2,6 +2,7 @@
 <!--Tools namespace is use in this case -->
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -29,6 +30,12 @@
             <!-- Height and weight and gravity to balance out the spaces -->
             <!--Tools namespace is use in this case This tools text is just a preview text and will not be in actual apps-->
 
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                >
+
                 <TextView
                     android:id="@+id/miwoktext1"
                     android:layout_width="wrap_content"
@@ -38,9 +45,15 @@
                     android:textColor="@color/textcolor"
                     android:textStyle="bold"
                     android:layout_weight="1"
-                    android:textSize="20dp"
+                    android:textSize="19dp"
                     tools:text="lutti" />
 
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/ic_play_arrow"
+                    />
+            </LinearLayout>
 
             <TextView
                 android:id="@+id/defaulttext1"
